@@ -1,18 +1,19 @@
 import os
-
-def compile_all():
-    files = os.listdir('.')
-    for f in files:
-        if os.path.isdir(f) and os.path.exists(os.path.join(f, "style.qss")):
-            print("Compiling for PyQt5: pyrcc5 %s/style.qrc -o ../%s.py" % (f,f))
-            os.system("pyrcc5 %s/style.qrc -o ../%s.py" % (f,f))
+import sys
+from setuptools import setup
+import pyqtcss
 
 __author__ = 'christoph.sommer@imba.oeaw.ac.at'
 
-import sys
+def compile_css():
+    for f in os.listdir('pyqtcss/src/'):
+        if os.path.isdir(os.path.join('pyqtcss/src/', f)):
+            if os.path.exists(os.path.join('pyqtcss/src/', f, "style.qrc")):
+                print(" * for PyQt5: pyrcc5 pyqtcss/src/{0}/style.qrc -o pyqtcss/{0}.py".format(f))
+                os.system("pyrcc5 pyqtcss/src/{0}/style.qrc -o pyqtcss/{0}.py".format(f))
 
-from distutils.core import setup
-import pyqtcss
+print 'Compiling resources...'
+compile_css()
 
 setup(name='pyqtcss',
       version = pyqtcss.version,
@@ -20,9 +21,6 @@ setup(name='pyqtcss',
       author = 'Christoph Sommer',
       author_email = 'christoph.sommer@imba.oeaw.ac.at',
       license = 'BSD',
-      url = 'http://cellh5.org',
-      package_dir = {'hmm_wrapper': 'pysrc/hmm_wrapper', '': 'pysrc'},
-      py_modules = ['cellh5', 'cellh5write'],
-      packages=['hmm_wrapper'],
-      package_data={'hmm_wrapper': ['hmm_constraint.xsd']},
+      url = 'https://github.com/sommerc/pyqt-stylesheets',
+      include_package_data=True,
       )
