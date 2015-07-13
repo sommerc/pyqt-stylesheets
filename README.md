@@ -24,3 +24,9 @@ pyqtcss.available_styles()
 style_string = pyqtcss.get_style("dark_blue")
 qt_widget.setStyleSheet(style_string)
 ```
+
+## Extend
+* create new folder in src/ 
+* create pyqt resource file `style.qrc` containing `style.qss` and other files such as icon pngs
+* create pyqt resource file `style.qss`
+
