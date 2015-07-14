@@ -25,14 +25,18 @@ def available_styles():
 
 def get_style(style_sheet):
     try:
-        mod = importlib.import_module("pyqtcss." + style_sheet)
+        mod = importlib.import_module("." + style_sheet, __name__)
         hasattr(mod, "qt_resource_name")
         f = QFile(":/%s/style.qss" % style_sheet)                                
         f.open(QFile.ReadOnly | QFile.Text)
         ts = QTextStream(f)
         stylesheet = ts.readAll()    
-    except Exception as e:
+    except ImportError as e:
         print "Style sheet not available. Use available_styles() to check for valid styles"
+        return u""
+    except Exception as e:
+        print "Style sheet available, but an error occured..."
+        traceback.print_exc()
         return u""
         
     return stylesheet
