@@ -3,6 +3,8 @@ import traceback
 import importlib
 import imp
 
+from PyQt5.QtCore import QFile, QTextStream
+
 version = 1.0
 
 def available_styles():
@@ -22,7 +24,6 @@ def available_styles():
     return styles        
 
 def get_style(style_sheet):
-    from PyQt5.QtCore import QFile, QTextStream
     try:
         mod = importlib.import_module("pyqtcss." + style_sheet)
         hasattr(mod, "qt_resource_name")
