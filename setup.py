@@ -7,11 +7,14 @@ __author__ = 'christoph.sommer@imba.oeaw.ac.at'
 
 def compile_css():
     print 'Compiling resources...'
-    for f in os.listdir('pyqtcss/src/'):
-        if os.path.isdir(os.path.join('pyqtcss/src/', f)):
-            if os.path.exists(os.path.join('pyqtcss/src/', f, "style.qrc")):
-                print(" * for PyQt5: pyrcc5 pyqtcss/src/{0}/style.qrc -o pyqtcss/{0}.py".format(f))
-                os.system("pyrcc5 pyqtcss/src/{0}/style.qrc -o pyqtcss/{0}.py".format(f))
+    css_root_path = os.path.dirname(__file__)
+    css_src_path = os.path.join(css_root_path, 'pyqtcss/src')
+    css_dest_poath = os.path.join(css_root_path, 'pyqtcss')
+    for f in os.listdir(css_src_path):
+        if os.path.isdir(os.path.join(css_src_path, f)):
+            if os.path.exists(os.path.join(css_src_path, f, "style.qrc")):
+                print(" * for PyQt5: pyrcc5 {1}/{0}/style.qrc -o pyqtcss/{0}.py".format(f, css_src_path))
+                os.system("pyrcc5 {1}/{0}/style.qrc -o {2}/{0}.py".format(f, css_src_path, css_dest_poath))
 
 if __name__ == "__main__":
     compile_css()
