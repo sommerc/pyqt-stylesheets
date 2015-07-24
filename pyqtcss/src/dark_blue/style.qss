@@ -734,14 +734,14 @@ QAbstractSpinBox:up-button
 {
     background-color: transparent;
     subcontrol-origin: border;
-    subcontrol-position: center right;
+    subcontrol-position: top right;
 }
 
 QAbstractSpinBox:down-button
 {
     background-color: transparent;
     subcontrol-origin: border;
-    subcontrol-position: center left;
+    subcontrol-position: bottom right;
 }
 
 QAbstractSpinBox::up-arrow,QAbstractSpinBox::up-arrow:disabled,QAbstractSpinBox::up-arrow:off {
@@ -1249,4 +1249,14 @@ QMessageBox {
     messagebox-information-icon	: url(:/dark_blue/img/information.png);
     messagebox-question-icon	: url(:/dark_blue/img/question.png);
     messagebox-warning-icon:    : url(:/dark_blue/img/warning.png);
+}
+
+ColorButton::enabled {
+    border-radius: 0px;
+    border: 1px solid #444444;
+}
+
+ColorButton::disabled {
+    border-radius: 0px;
+    border: 1px solid #AAAAAA;
 }
