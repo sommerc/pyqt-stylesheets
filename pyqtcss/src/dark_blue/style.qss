@@ -1061,7 +1061,6 @@ QToolButton[popupMode="2"] { /* only for InstantPopup */
 
 
 QToolButton:hover, QToolButton::menu-button:hover {
-    background-color: transparent;
     border: 2px solid #78879b;
 }
 
