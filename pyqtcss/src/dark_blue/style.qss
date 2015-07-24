@@ -245,17 +245,17 @@ QMenu
 {
     border: 1px solid #3A3939;
     color: silver;
-    margin: 2px;
+    margin: 1px;
 }
 
 QMenu::icon
 {
-    margin: 5px;
+    margin: 1px;
 }
 
 QMenu::item
 {
-    padding: 5px 30px 5px 30px;
+    padding: 2px 2px 2px 25px;
     margin-left: 5px;
     border: 1px solid transparent; /* reserve space for selection border */
 }
@@ -273,8 +273,8 @@ QMenu::separator {
 }
 
 QMenu::indicator {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
 }
 
 /* non-exclusive indicator = check box style indicator
@@ -616,26 +616,26 @@ QPushButton
 {
     color: silver;
     background-color: #302F2F;
-    border-width: 1px;
+    border-width: 2px;
     border-color: #4A4949;
     border-style: solid;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 2px;
-    outline: none;
-    min-width: 40px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 4px;
+    /* outline: none; */
+    /* min-width: 40px; */
 }
 
 QPushButton:disabled
 {
     background-color: #302F2F;
-    border-width: 1px;
+    border-width: 2px;
     border-color: #3A3939;
     border-style: solid;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
     padding-left: 10px;
     padding-right: 10px;
     /*border-radius: 2px;*/
@@ -663,7 +663,12 @@ QPushButton:checked{
     border-color: #6A6969;
 }
 
-QComboBox:hover,QPushButton:hover,QAbstractSpinBox:hover,QLineEdit:hover,QTextEdit:hover,QPlainTextEdit:hover,QAbstractView:hover,QTreeView:hover
+QPushButton:hover {
+    border: 2px solid #78879b;
+    color: silver;
+}
+
+QComboBox:hover, QAbstractSpinBox:hover,QLineEdit:hover,QTextEdit:hover,QPlainTextEdit:hover,QAbstractView:hover,QTreeView:hover
 {
     border: 1px solid #78879b;
     color: silver;
@@ -943,17 +948,15 @@ QDockWidget::close-button:pressed, QDockWidget::float-button:pressed {
     background: rgba(255, 255, 255, 10);
 }
 
-QTreeView, QListView
-{
+QTreeView, QListView, QTextBrowser, AtLineEdit, AtLineEdit::hover {
     border: 1px solid #444;
     background-color: silver;
-    border-radius: 5px;
-    margin-left: 5px;
+    border-radius: 3px;
+    margin-left: 3px;
     color: black;
 }
 
-QTreeView:branch:selected, QTreeView:branch:hover
-{
+QTreeView:branch:selected, QTreeView:branch:hover {
     background: url(:/dark_blue/img/transparent.png);
 }
 
@@ -1028,7 +1031,7 @@ QSlider::groove:vertical {
 
 QSlider::handle:vertical {
     background: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0.0 silver,
-      stop: 0.2 #a8a8a8, stop: 1 #727272);
+    stop: 0.2 #a8a8a8, stop: 1 #727272);
     border: 1px solid #3A3939;
     width: 14px;
     height: 14px;
@@ -1037,34 +1040,35 @@ QSlider::handle:vertical {
 }
 
 QToolButton {
-    background-color: transparent;
-    border: 1px transparent #4A4949;
-    border-radius: 2px;
-    margin: 3px;
-    padding: 3px;
+    /*  background-color: transparent; */
+    border: 2px transparent #4A4949;
+    border-radius: 4px;
+    background-color: dimgray;
+    margin: 2px;
+    padding: 2px;
 }
 
 QToolButton[popupMode="1"] { /* only for MenuButtonPopup */
  padding-right: 20px; /* make way for the popup button */
- border: 1px transparent #4A4949;
- border-radius: 5px;
+ border: 2px transparent #4A4949;
+ border-radius: 4px;
 }
 
 QToolButton[popupMode="2"] { /* only for InstantPopup */
  padding-right: 10px; /* make way for the popup button */
- border: 1px transparent #4A4949;
+ border: 2px transparent #4A4949;
 }
 
 
 QToolButton:hover, QToolButton::menu-button:hover {
     background-color: transparent;
-    border: 1px solid #78879b;
+    border: 2px solid #78879b;
 }
 
 QToolButton:checked, QToolButton:pressed,
-        QToolButton::menu-button:pressed {
+    QToolButton::menu-button:pressed {
     background-color: #4A4949;
-    border: 1px solid #78879b;
+    border: 2px solid #78879b;
 }
 
 /* the subcontrol below is used only in the InstantPopup or DelayedPopup mode */
@@ -1095,7 +1099,7 @@ QToolButton::menu-arrow:open {
 QPushButton::menu-indicator  {
     subcontrol-origin: padding;
     subcontrol-position: bottom right;
-    left: 8px;
+    left: 4px;
 }
 
 QTableView
@@ -1246,4 +1250,3 @@ QMessageBox {
     messagebox-question-icon	: url(:/dark_blue/img/question.png);
     messagebox-warning-icon:    : url(:/dark_blue/img/warning.png);
 }
-
