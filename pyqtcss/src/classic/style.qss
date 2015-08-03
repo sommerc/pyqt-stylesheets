@@ -1,15 +1,15 @@
 
-/* QWidget { */
-/*     font-size: 11px; */
-/* } */
+QWidget {
+    font-size: 11px;
+}
 
 QTableView {
     font-size: 10px;
     alternate-background-color: #EEEEFF;
 }
 
-QPushButton {
-    font-size: 11px;
+Browser QPushButton {
+    font-size: 10px;
     min-width: 10px;
 }
 
@@ -22,20 +22,30 @@ ColorButton::disabled {
 }
 
 
-/* QGroupBox { */
-/*     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, */
-/*                                       stop: 0 #E0E0E0, stop: 1 #FFFFFF); */
-/*     border: 2px solid #999999; */
-/*     border-radius: 5px; */
-/*     margin-top: 1ex; /\* leave space at the top for the title *\/ */
-/*     font-size: 13px; */
-/*     color: black; */
-/* } */
+Browser QGroupBox {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #E0E0E0, stop: 1 #FFFFFF);
+    border: 2px solid #999999;
+    border-radius: 5px;
+    margin-top: 1ex; /* leave space at the top for the title */
+    font-size: 13px;
+    color: black;
+}
 
-/* QGroupBox::title { */
-/*     subcontrol-origin: margin; */
-/*     subcontrol-position: top center; /\* position at the top center *\/ */
-/*     padding: 0 3px; */
-/*     font-size: 13px; */
-/*     color: black; */
-/* } */
+Browser QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center; /* position at the top center */
+    padding: 0 3px;
+    font-size: 13px;
+    color: black;
+}
+
+PluginItem {
+    border: 2px solid black;
+    background: white;
+}
+
+
+PluginItem Frame {
+    background: #CCCCCC;
+}
