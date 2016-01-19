@@ -49,3 +49,22 @@ PluginItem {
 PluginItem Frame {
     background: #CCCCCC;
 }
+
+
+TabButton {
+    border: 1px solid #8f8f91;
+    border-radius: 2px;
+    padding: 3px;
+    min-width: 120px;
+}
+
+TabButton::checked {
+    background-color: qlineargradient(x1: 0, y1: 0 , x2: 0, y2: 1,
+                                      stop: 0 #9a9b9e, stop: 1 #babbbe);
+}
+
+
+TabButton::pressed {
+    background-color: qlineargradient(x1: 0, y1: 0 , x2: 0, y2: 1,
+                                      stop: 0 #9a9b9e, stop: 1 #babbbe);
+}
