@@ -32,10 +32,10 @@ def get_style(style_sheet):
         ts = QTextStream(f)
         stylesheet = ts.readAll()    
     except ImportError as e:
-        print "Style sheet not available. Use available_styles() to check for valid styles"
+        print ("Style sheet not available. Use available_styles() to check for valid styles")
         return u""
     except Exception as e:
-        print "Style sheet available, but an error occured..."
+        print ("Style sheet available, but an error occured...")
         traceback.print_exc()
         return u""
         
