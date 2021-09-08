@@ -6,7 +6,7 @@ import pyqtcss
 __author__ = 'christoph.sommer@imba.oeaw.ac.at'
 
 def compile_css():
-    print 'Compiling resources...'
+    print ('Compiling resources...')
     css_root_path = os.path.dirname(__file__)
     css_src_path = os.path.join(css_root_path, 'pyqtcss/src')
     css_dest_poath = os.path.join(css_root_path, 'pyqtcss')
